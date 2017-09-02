@@ -3,11 +3,10 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-        int n = 8;
+        int n = 3;
         String output = "";
-        for (int i = 0; i < 8; i++) {
-            output += "*";
+        for (int i = 0; i < 3; i++) {
+            output += "*\n";
         }
         System.out.println(output);
     }
