@@ -33,10 +33,10 @@ public class Main {
     }
 
     private static String diamond(int n) {
-        String[][] shape = new String[n][2 * n - 1];
-        for (int i = 0; i < n; i++) {
+        String[][] shape = new String[2 * n - 1][2 * n - 1];
+        for (int i = 0; i < 2 * n - 1; i++) {
             for (int j = 0; j < 2 * n - 1; j++) {
-                if (i < Math.abs(j - n + 1)) {
+                if (Math.abs(n - 1 - Math.abs(i - n + 1)) < Math.abs(j - n + 1)) {
                     shape[i][j] = " ";
                 } else {
                     shape[i][j] = "*";
