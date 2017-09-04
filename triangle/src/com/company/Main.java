@@ -3,11 +3,12 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        String output = diamond(3);
+        String[][] shape = diamondWithName(10);
+        String output = shapeToString(shape);
         System.out.println(output);
     }
 
-    private static String triangle(int n) {
+    private static String[][] triangle(int n) {
         String[][] shape = new String[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -19,10 +20,10 @@ public class Main {
             }
             shape[i][n - 1] += "\n";
         }
-        return shpeToString(shape);
+        return shape;
     }
 
-    private static String shpeToString(String[][] shape) {
+    private static String shapeToString(String[][] shape) {
         String output = "";
         for (int i = 0; i < shape.length; i++) {
             for (int j = 0; j < shape[i].length; j++) {
@@ -32,7 +33,7 @@ public class Main {
         return output;
     }
 
-    private static String diamond(int n) {
+    private static String[][] diamond(int n) {
         String[][] shape = new String[2 * n - 1][2 * n - 1];
         for (int i = 0; i < 2 * n - 1; i++) {
             for (int j = 0; j < 2 * n - 1; j++) {
@@ -44,7 +45,13 @@ public class Main {
             }
             shape[i][2 * n - 2] += "\n";
         }
-        return shpeToString(shape);
+        return shape;
     }
 
+    private static String[][] diamondWithName(int n) {
+        String[][] shape = diamond(n);
+        shape[n - 1] = new String[1];
+        shape[n - 1][0] = "HeMing\n";
+        return shape;
+    }
 }
